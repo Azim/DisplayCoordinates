@@ -1,0 +1,9 @@
+{
+    "name": "DisplayCoordinates",
+    "version_number": "1.0.1",
+    "website_url": "https://github.com/Azim/DisplayCoordinates",
+    "description": "Displays player's world coordinates.",
+    "dependencies": [
+		"BepInEx-BepInExPack_IL2CPP-6.0.733"
+	]
+}

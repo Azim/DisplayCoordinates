@@ -1,7 +1,13 @@
 # DisplayCoordinates
-Displays player's coordinates on the pause menu
+Displays player's world coordinates.
+
+You can set size and position of coordinates UI via config.
 
 # Releases
  
+### 1.0.1
+* Changed the rendering method to use IMGUI
+* Added config options to set size and position of coordinates UI
+
 ### 1.0.0
 * Initial release
