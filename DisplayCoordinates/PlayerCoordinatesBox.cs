@@ -12,11 +12,14 @@ namespace DisplayCoordinates
     {
         void OnGUI()
         {
+            GUIStyle style = new GUIStyle(GUI.skin.box);
+            style.fontSize = Plugin.fontSize; // Ajuste este valor para aumentar ou diminuir a fonte
+            style.alignment = TextAnchor.MiddleLeft;
+            style.normal.textColor = UnityEngine.Color.white;
+
             GUILayout.BeginArea(Plugin.layoutRect);
-            
-            GUILayout.Box(Plugin.name);
-            GUILayout.Box("x: " + Plugin.coords.x.ToString("0.00") + "  y: " + Plugin.coords.y.ToString("0.00") + "  z: " + Plugin.coords.z.ToString("0.00"));
-            
+            GUILayout.Box(Plugin.name, style);
+            GUILayout.Box($"x: {Plugin.coords.x:0.00}  y: {Plugin.coords.y:0.00}  z: {Plugin.coords.z:0.00}", style);
             GUILayout.EndArea();
         }
     }
