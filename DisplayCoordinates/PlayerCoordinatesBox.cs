@@ -13,8 +13,8 @@ namespace DisplayCoordinates
         void OnGUI()
         {
             GUIStyle style = new GUIStyle(GUI.skin.box);
-            style.fontSize = Plugin.fontSize; // Ajuste este valor para aumentar ou diminuir a fonte
-            style.alignment = TextAnchor.MiddleLeft;
+            style.fontSize = Plugin.fontSize;
+            //style.alignment = TextAnchor.MiddleLeft;
             style.normal.textColor = UnityEngine.Color.white;
 
             GUILayout.BeginArea(Plugin.layoutRect);
