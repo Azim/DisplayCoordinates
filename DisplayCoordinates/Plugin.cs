@@ -6,6 +6,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 using UnityEngine.InputSystem;
+using System.Numerics;
 
 namespace DisplayCoordinates
 {
@@ -19,6 +20,7 @@ namespace DisplayCoordinates
         internal static Rect layoutRect;
         internal static int fontSize;
         internal static ConfigEntry<bool> showCoords;
+        internal static ConfigEntry<bool> showCharName;
         internal static ConfigEntry<string> toggleHotkey;
         internal static ConfigFile configFile;
         internal static float lastActionTime;
@@ -38,6 +40,7 @@ namespace DisplayCoordinates
             int height = Config.Bind<int>("UI", "height", 50, "Height of the coordinates box").Value;
             fontSize = Config.Bind<int>("UI", "fontSize", 14, "Font size of the coordinates text").Value;
             showCoords = Config.Bind<bool>("UI", "showCoords", true, "Whether to show coordinates");
+            showCharName = Config.Bind<bool>("UI", "showCharName", true, "Whether to show char name");
             toggleHotkey = Config.Bind("UI", "toggleHotkey", "Insert", "Use Unity InputSystem Key names (https://docs.unity3d.com/ScriptReference/KeyCode.html), separated by '+'). Examples: RightControl + LeftShift + Insert");
             layoutRect = new Rect(x, y, width, height);
 
@@ -113,7 +116,7 @@ namespace DisplayCoordinates
 
         private static void SetDefaultHotkeys()
         {
-            modifierKeys = new Key[] {  };
+            modifierKeys = new Key[] { };
             primaryKey = Key.Insert;
             toggleHotkey.Value = "Insert";
             configFile.Save();
